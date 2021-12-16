@@ -18,4 +18,10 @@ final class ClubCardTests: XCTestCase {
         XCTAssertEqual(ClubCard(rank: .queen).description, "🃝")
         XCTAssertEqual(ClubCard(rank: .king).description, "🃞")
     }
+    
+    func testIsHiddenDescription() {
+        let card = ClubCard(rank: .four)
+        card.isHidden = true
+        XCTAssertEqual(card.description, "🂠")
+    }
 }
