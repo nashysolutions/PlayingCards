@@ -9,3 +9,10 @@ extension Suit: CustomStringConvertible {
         rawValue
     }
 }
+
+extension Suit {
+    public enum SymbolStyle {
+        case filled, hallow
+    }
+}
+
