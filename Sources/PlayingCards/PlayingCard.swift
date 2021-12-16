@@ -5,6 +5,8 @@ public class PlayingCard: Card, CustomStringConvertible {
     public let rank: Rank
     public let suit: Suit
     
+    public var isHidden = false
+    
     public init(rank: Rank, suit: Suit) {
         self.rank = rank
         self.suit = suit
@@ -20,6 +22,11 @@ public class PlayingCard: Card, CustomStringConvertible {
     }
     
     public var description: String {
-        rank.description + " of " + suit.description
+        switch isHidden {
+        case true:
+            return "🂠"
+        case false:
+            return rank.description + " of " + suit.description
+        }
     }
 }

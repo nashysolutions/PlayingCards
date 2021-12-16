@@ -7,4 +7,10 @@ final class PlayingCardTests: XCTestCase {
         let card = PlayingCard(rank: .four, suit: .clubs)
         XCTAssertEqual(card.description, "four of clubs")
     }
+    
+    func testIsHiddenDescription() {
+        let card = PlayingCard(rank: .four, suit: .clubs)
+        card.isHidden = true
+        XCTAssertEqual(card.description, "🂠")
+    }
 }
