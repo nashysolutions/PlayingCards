@@ -18,4 +18,10 @@ final class SpadeCardTests: XCTestCase {
         XCTAssertEqual(SpadeCard(rank: .queen).description, "🂭")
         XCTAssertEqual(SpadeCard(rank: .king).description, "🂮")
     }
+    
+    func testIsHiddenDescription() {
+        let card = SpadeCard(rank: .four)
+        card.isHidden = true
+        XCTAssertEqual(card.description, "🂠")
+    }
 }

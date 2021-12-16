@@ -7,6 +7,9 @@ public final class DiamondCard: PlayingCard {
     }
     
     public override var description: String {
+        guard isHidden == false else {
+            return super.description
+        }
         switch rank {
         case .ace: return "🃁"
         case .two: return "🃂"

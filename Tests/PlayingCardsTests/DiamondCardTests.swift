@@ -18,4 +18,10 @@ final class DiamondCardTests: XCTestCase {
         XCTAssertEqual(DiamondCard(rank: .queen).description, "🃍")
         XCTAssertEqual(DiamondCard(rank: .king).description, "🃎")
     }
+    
+    func testIsHiddenDescription() {
+        let card = DiamondCard(rank: .four)
+        card.isHidden = true
+        XCTAssertEqual(card.description, "🂠")
+    }
 }
