@@ -18,6 +18,9 @@ extension Suit {
 
 extension Suit {
     
+    /// Provides a description of the symbol.
+    /// - Parameter style: The style of the symbol.
+    /// - Returns: A unicode representation of the symbol
     public func symbol(style: SymbolStyle = .hallow) -> String {
         switch self {
         case .spades: return spades(style)
