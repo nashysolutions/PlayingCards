@@ -19,4 +19,9 @@ final class HeartCardTests: XCTestCase {
         XCTAssertEqual(HeartCard(rank: .king).description, "🂾")
     }
     
+    func testIsHiddenDescription() {
+        let card = HeartCard(rank: .four)
+        card.isHidden = true
+        XCTAssertEqual(card.description, "🂠")
+    }
 }
