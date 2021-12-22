@@ -13,4 +13,9 @@ final class PlayingCardTests: XCTestCase {
         card.isHidden = true
         XCTAssertEqual(card.description, "🂠")
     }
+    
+    func testHashable() {
+        let card = PlayingCard(rank: .four, suit: .clubs)
+        XCTAssertEqual(card.hashValue, card.id)
+    }
 }
