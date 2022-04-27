@@ -14,24 +14,6 @@ final class CardTests: XCTestCase {
         }
     }
     
-    func testComparableLHSLower() {
-        let lhs = FrozenCard(rank: .three, suit: .spades)
-        let rhs = FrozenCard(rank: .four, suit: .spades)
-        XCTAssertTrue(lhs < rhs)
-    }
-    
-    func testComparableLHSSame() {
-        let lhs = FrozenCard(rank: .three, suit: .spades)
-        let rhs = FrozenCard(rank: .three, suit: .spades)
-        XCTAssertFalse(lhs < rhs)
-    }
-    
-    func testComparableLHSHigher() {
-        let lhs = FrozenCard(rank: .king, suit: .spades)
-        let rhs = FrozenCard(rank: .three, suit: .spades)
-        XCTAssertFalse(lhs < rhs)
-    }
-    
     func testIdentifier() {
         let card = FrozenCard(rank: .three, suit: .spades)
         XCTAssertEqual(card.hashValue, card.id)
