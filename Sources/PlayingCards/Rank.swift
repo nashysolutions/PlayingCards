@@ -1,6 +1,6 @@
 import Foundation
 
-public enum Rank: Int, CaseIterable {
+public enum Rank: CaseIterable {
     case ace
     case two, three, four, five, six, seven, eight, nine, ten
     case jack, queen, king
@@ -23,11 +23,5 @@ extension Rank: CustomStringConvertible {
         case .queen: return "queen"
         case .king: return "king"
         }
-    }
-}
-
-extension Rank: Comparable {
-    public static func <(lhs: Rank, rhs: Rank) -> Bool {
-        lhs.rawValue < rhs.rawValue
     }
 }

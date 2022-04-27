@@ -2,28 +2,10 @@ import XCTest
 @testable import PlayingCards
 
 final class RankTests: XCTestCase {
-    
-    func testRawRepresentableAssignment() {
-        var rawValue: Int = 0
-        for rank in Rank.allCases {
-            XCTAssertEqual(rank.rawValue, rawValue)
-            rawValue += 1
-        }
-    }
-    
+        
     func testCaseIterableOrder() {
         let collection: [Rank] = [.ace, .two, .three, .four, .five, .six, .seven, .eight, .nine, .ten, .jack, .queen, .king]
         XCTAssertEqual(collection, Rank.allCases)
-    }
-    
-    func testComparable() {
-        var storage: Rank?
-        for rank in Rank.allCases {
-            if let last = storage {
-                XCTAssertTrue(last < rank)
-            }
-            storage = rank
-        }
     }
     
     func testDescription() {
