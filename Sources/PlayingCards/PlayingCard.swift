@@ -1,6 +1,6 @@
 import Foundation
 
-public class PlayingCard: Card, CustomStringConvertible {
+public class PlayingCard: Card {
     
     public let rank: Rank
     public let suit: Suit
@@ -15,8 +15,9 @@ public class PlayingCard: Card, CustomStringConvertible {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(rank.hashValue)
         hasher.combine(suit.hashValue)
+        hasher.combine(isHidden)
     }
-    
+
     public static func ==(lhs: PlayingCard, rhs: PlayingCard) -> Bool {
         lhs.rank == rhs.rank && lhs.suit == rhs.suit
     }
