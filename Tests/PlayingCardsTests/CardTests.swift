@@ -5,6 +5,9 @@ final class CardTests: XCTestCase {
     
     private struct FrozenCard: Card {
         
+        let isHidden: Bool = false
+        let description: String = ""
+        
         let rank: Rank
         let suit: Suit
         
