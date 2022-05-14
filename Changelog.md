@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [2.0.1] - 2022-05-14
+
+## Fixes
+
+- [Issue 11](https://github.com/nashysolutions/PlayingCards/issues/11)
+  Code did not compile in tvOS or watchOS environment.
+
 ## [2.0.0] - 2022-04-27
 
 Introduces a breaking change.
