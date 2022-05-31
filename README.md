@@ -21,26 +21,7 @@ deck.generateNewDeck()
 print(deck.cards.count) // 52
 ```
 
-Unicode representations of the front of each card, can be printed from the following subclasses, which you would need to map. Otherwise, the description of `PlayingCard` is just a string desciption of the rank and suit. 
-
-```swift
-let deck = Deck()
-deck.shuffle()
-let cards: [PlayingCard] = deck.cards.map { (card: PlayingCard) in
-    switch card.suit {
-    case .clubs:
-        return ClubCard(rank: card.rank)
-    case .hearts:
-        return HeartCard(rank: card.rank)
-    case .diamonds:
-        return DiamondCard(rank: card.rank)
-    case .spades:
-        return SpadeCard(rank: card.rank)
-    }
-}
-```
-
-If the card's `isHidden` property is set to true, it will be the unicode char `U+1F0A0` representing the back of a card.
+The cards within `Deck` are subclasses of `PlayingCard`. Each have a unicode representation of the front face available via `description`. If you create an instance of `PlayingCard` (i.e. not a subclass of `PlayingCard`) then the `description` will be the rank and suit of the card. If the card's `isHidden` property is set to true, it will be the unicode char `U+1F0A0` representing the back of a card.
 
 The `PlayingCard` type conforms to the `Card` protocol so a `PlayingCard` or a subclass of `PlayingCard` can be passed along to a SwfitUI View like so.
 
