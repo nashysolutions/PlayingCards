@@ -25,10 +25,10 @@ public final class Deck {
     public func generateNewDeck() {
         var collection: [PlayingCard] = []
         for rank in Rank.allCases {
-            collection.append(DiamondCard(rank: rank))
-            collection.append(HeartCard(rank: rank))
-            collection.append(ClubCard(rank: rank))
-            collection.append(SpadeCard(rank: rank))
+            collection.append(PlayingCard(rank: rank, suit: .diamonds))
+            collection.append(PlayingCard(rank: rank, suit: .hearts))
+            collection.append(PlayingCard(rank: rank, suit: .clubs))
+            collection.append(PlayingCard(rank: rank, suit: .spades))
         }
         cards = collection
     }
