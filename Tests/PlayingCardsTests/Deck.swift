@@ -8,17 +8,10 @@ final class DeckTests: XCTestCase {
     func testCount() {
         XCTAssertTrue(deck.cards.count == 52)
     }
-    
-    func testShuffle() {
-        let unshuffled = deck.cards
-        deck.shuffle()
-        let shuffled = deck.cards
-        XCTAssertNotEqual(unshuffled, shuffled)
-    }
-    
+        
     func testPullCard() {
-        XCTAssertEqual(deck.pullCard(), PlayingCard(rank: .king, suit: .spades))
-        deck.cards = []
+        XCTAssertNotNil(deck.pullCard())
+        deck.cards.removeAll()
         XCTAssertNil(deck.pullCard())
     }
 }
