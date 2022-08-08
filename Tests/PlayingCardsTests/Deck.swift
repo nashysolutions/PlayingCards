@@ -3,11 +3,7 @@ import XCTest
 
 final class DeckTests: XCTestCase {
     
-    private var deck: Deck!
-    
-    override func setUp() {
-        deck = Deck()
-    }
+    private var deck = Deck()
     
     func testCount() {
         XCTAssertTrue(deck.cards.count == 52)
@@ -21,7 +17,7 @@ final class DeckTests: XCTestCase {
     }
     
     func testPullCard() {
-        XCTAssertEqual(deck.pullCard(), SpadeCard(rank: .king))
+        XCTAssertEqual(deck.pullCard(), PlayingCard(rank: .king, suit: .spades))
         deck.cards = []
         XCTAssertNil(deck.pullCard())
     }
