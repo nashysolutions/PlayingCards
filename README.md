@@ -9,52 +9,19 @@ A standard 52 deck of [French-suited playing cards](https://en.wikipedia.org/wik
 
 ## Usage
 
-The cards array can be managed directly. However, there are some convenience functions such as `pullCard()`.
+The `Deck` instance has an array of cards. Upon instantiation, 52 cards are populated, in random order. 
 
 ```swift
-let deck = Deck()
-deck.shuffle()
-print(deck.cards.count) // 52
-let card: PlayingCard? = deck.pullCard()
-print(deck.cards.count) // 51
-deck.generateNewDeck()
-print(deck.cards.count) // 52
-```
-
-The cards within `Deck` are subclasses of `PlayingCard`. Each have a unicode representation of the front face available via `description`. If you create an instance of `PlayingCard` (i.e. not a subclass of `PlayingCard`) then the `description` will be the rank and suit of the card. If the card's `isHidden` property is set to true, it will be the unicode char `U+1F0A0` representing the back of a card.
-
-The `PlayingCard` type conforms to the `Card` protocol so a `PlayingCard` or a subclass of `PlayingCard` can be passed along to a SwfitUI View like so.
-
-```swift
-import SwiftUI
-import PlayingCards
-
-struct CardView<C: Card>: View {
+struct Dealer {
     
-    let card: C
-    let size: CGFloat
+    private var deck = Deck()
     
-    var body: some View {
-        Text(card.description)
-            .font(.system(size: size))
-            .foregroundColor(color)
-    }
-    
-    private var color: Color {
-        if card.isHidden {
-            return .black
+    mutating func pullCard() -> PlayingCard? {
+        if let card = deck.pullCard() {
+            return card
         }
-        switch card.suit {
-        case .diamonds, .hearts: return .red
-        case .clubs, .spades: return .black
-        }
-    }
-}
-
-struct CardView_Previews: PreviewProvider {
-    
-    static var previews: some View {
-        CardView(card: ClubCard(rank: .seven), size: 100)
+        self.deck = Deck()
+        return pullCard()
     }
 }
 ```

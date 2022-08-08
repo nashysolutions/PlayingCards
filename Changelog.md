@@ -5,6 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [3.0.0] - 2022-08-08
+
+Introduces breaking changes and obsoleted API.
+
+## Fixes
+
+- [Issue 13](https://github.com/nashysolutions/PlayingCards/issues/13)
+Identical playing cards not actually identical.
+
+## Removed
+
+- [Issue 14](https://github.com/nashysolutions/PlayingCards/issues/14)
+Unicode characters removed.
+
+- [Issue 16](https://github.com/nashysolutions/PlayingCards/issues/16)
+Shuffle function removed.
+
 ## [2.0.1] - 2022-05-14
 
 ## Fixes
